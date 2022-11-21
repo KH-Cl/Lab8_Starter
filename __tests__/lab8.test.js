@@ -136,16 +136,11 @@ describe('Basic user flow for Website', () => {
     const prodItems = await page.$$('product-item');
     // Go through and click "Remove from Cart" on every single <product-item>, just like above.
     let shadow, btn;
-    //why does this one need to be zero!?!?!?!?!
     for(let i = 0; i < prodItems.length; i++){
       shadow = await prodItems[i].getProperty('shadowRoot');
       btn = await shadow.$('button');
       await btn.click();
     }
-    /*let cartValue = await page.evaluate(() => {
-      return JSON.parse(localStorage.getItem('cart'));
-    });
-    console.log("what we didn't clicked" + cartValue);*/
     // Once you have, check to make sure that #cart-count is now 0
     let cartCt = await page.$('#cart-count');
     let text = await cartCt.getProperty('innerText');

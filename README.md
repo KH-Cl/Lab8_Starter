@@ -2,7 +2,6 @@
 
 ## Names:
 Kara Hoagland
-
 Rhea Bhutada
 
 ## "Check Your Understanding" Answers:
